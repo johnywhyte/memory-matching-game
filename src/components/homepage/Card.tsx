@@ -1,14 +1,16 @@
 import Image from "next/image";
+import { CardData } from "@/types/card-data";
 
 type CardProps = {
-  image: string;
+  // image: string;
+  card: CardData;
   isFlipped: boolean;
   onClick: () => void;
 };
 
-const Card = ({ image, isFlipped, onClick }: CardProps) => {
+const Card = ({ card, isFlipped, onClick }: CardProps) => {
   return (
-    <div className="w-40 h-56 m-2 border perspective" onClick={onClick}>
+    <div className="w-40 h-56 m-2  perspective" onClick={onClick}>
       <div
         className={`relative w-full h-full transition-transform duration-500 ${
           isFlipped ? "rotate-y-180" : ""
@@ -20,11 +22,11 @@ const Card = ({ image, isFlipped, onClick }: CardProps) => {
         <div className="absolute w-full h-full backface-hidden  rotate-y-180 bg-white">
           {isFlipped ? (
             <Image
-              src={image}
+              src={card.image}
               alt="Card front"
               width={200}
               height={200}
-              className="w-full h-full  object-cover"
+              className="w-full h-full rounded-xl  object-cover"
             />
           ) : (
             <Image
@@ -42,3 +44,8 @@ const Card = ({ image, isFlipped, onClick }: CardProps) => {
 };
 
 export default Card;
+
+
+
+
+
