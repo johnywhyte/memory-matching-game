@@ -44,9 +44,9 @@ const GameResult = ({ clicks, bestScore, resetGame, setGameCompleted }: GameResu
         />
         <div className="relative z-20 text-center  mt-4">
           <h2 className="text-2xl font-bold">Game Completed!</h2>
-          <h1>NEW HIGHSCORE</h1>
+          {bestScore === clicks && <p className="text-3xl font-bold tracking-tight uppercase text-green-700">🎉 New Best Score! 🎉</p>}
+          {/* <h1>NEW HIGHSCORE</h1> */}
           <p>Total Clicks: {clicks}</p>
-          {bestScore === clicks && <p>🎉 New Best Score! 🎉</p>}
           <p>Best Score: {bestScore}</p>
           <button
             onClick={handlePlayAgain}
