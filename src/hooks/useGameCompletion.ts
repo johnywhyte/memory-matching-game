@@ -9,7 +9,10 @@ export const useGameCompletion = (
   clicks: number
 ) => {
   const [gameCompleted, setGameCompleted] = useState(false);
-  const [bestScore, setBestScore] = usePersistedState<number | null>("bestScore", null);
+  const [bestScore, setBestScore] = usePersistedState<number | null>(
+    "bestScore",
+    null
+  );
 
   useEffect(() => {
     if (matchedCards.length === totalCards && totalCards > 0) {

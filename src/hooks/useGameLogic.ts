@@ -1,4 +1,5 @@
 // hooks/useGameLogic.ts
+"use client";
 import { useState } from "react";
 import { CardData } from "@/types/card-data";
 
@@ -41,7 +42,6 @@ export const useGameLogic = (
   };
 
   const resetBoard = () => {
-    
     setFlippedCards([]);
     setMatchedCards([]);
     setClicks(0);
@@ -49,7 +49,5 @@ export const useGameLogic = (
     setCards(shuffledCards); // Update cards with shuffled array
   };
 
-
-  
   return { flippedCards, matchedCards, clicks, handleCardClick, resetBoard };
 };

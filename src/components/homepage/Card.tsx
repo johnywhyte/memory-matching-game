@@ -9,10 +9,7 @@ type CardProps = {
 
 const Card = ({ card, isFlipped, onClick }: CardProps) => {
   return (
-    <div
-      className="w-40 h-56 m-2 perspective cursor-pointer"
-      onClick={onClick}
-    >
+    <div className="w-40 h-56 m-2 perspective cursor-pointer" onClick={onClick}>
       <div
         className={`relative w-full h-full transition-transform duration-500 transform-style-preserve-3d ${
           isFlipped ? "rotate-y-180" : ""

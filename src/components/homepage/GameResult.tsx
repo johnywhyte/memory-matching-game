@@ -12,7 +12,12 @@ interface GameResultProps {
   setGameCompleted: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const GameResult = ({ clicks, bestScore, resetGame, setGameCompleted }: GameResultProps) => {
+const GameResult = ({
+  clicks,
+  bestScore,
+  resetGame,
+  setGameCompleted,
+}: GameResultProps) => {
   const confettiRef = useRef<ConfettiRef>(null);
 
   // Trigger confetti if clicks match the new best score
@@ -22,11 +27,10 @@ const GameResult = ({ clicks, bestScore, resetGame, setGameCompleted }: GameResu
     }
   }, [clicks, bestScore]);
 
-  const handlePlayAgain = () =>{
-    resetGame()
-    setGameCompleted(false)
-
-  }
+  const handlePlayAgain = () => {
+    resetGame();
+    setGameCompleted(false);
+  };
 
   return (
     // <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-3xl border bg-background md:shadow-xl">
@@ -44,7 +48,11 @@ const GameResult = ({ clicks, bestScore, resetGame, setGameCompleted }: GameResu
         />
         <div className="relative z-20 text-center  mt-4">
           <h2 className="text-2xl font-bold">Game Completed!</h2>
-          {bestScore === clicks && <p className="text-3xl font-bold tracking-tight uppercase text-green-700">🎉 New Best Score! 🎉</p>}
+          {bestScore === clicks && (
+            <p className="text-3xl font-bold tracking-tight uppercase text-green-700">
+              🎉 New Best Score! 🎉
+            </p>
+          )}
           {/* <h1>NEW HIGHSCORE</h1> */}
           <p>Total Clicks: {clicks}</p>
           <p>Best Score: {bestScore}</p>
