@@ -22,7 +22,7 @@ const GameBoard = () => {
   return (
     <div className="mb-[16rem]">
       <Navbar bestScore={bestScore}></Navbar>
-      <div className="flex justify-center">
+      <div className="flex mt-[2rem]  md:mt-[4rem] lg:mt-0 justify-center">
         <p className="text-2xl font-bold px-12 py-6 rounded-2xl bg-amber-300">
           Clicks: {clicks}
         </p>
@@ -40,7 +40,7 @@ const GameBoard = () => {
             </div>
           </div>
         ) : (
-          <div className="grid mt-10 grid-cols-4 gap-2">
+          <div className="grid mt-10 grid-cols-2 md:grid-cols-4 gap-2">
             {cards.map((card, index) => (
               <Card
                 key={card.id}
